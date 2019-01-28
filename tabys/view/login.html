@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TABYS</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body style="background-color:#c66b4f">
+    <div id="pagLogin">
+
+        <div class="container">
+            <div class="card" style="background-color:rgba(255, 255, 255)">
+                <div class="card-head">
+                    <center>
+                        <img style="width:45%" responsive SRC="../assets/images/logo-tabys.png">
+                    </center>
+                </div>
+
+                <div class="card-body">
+                    <form id="form-login" action="">
+                        <div class="form-group">
+                            <input id="txtUser" type="text" class="form-control" placeholder="Email" required>
+                            <input id="txtPassword" type="password" class="form-control" placeholder="Palavra-passe" required>
+                        </div>
+                        <center>
+                            <a href="" data-toggle="modal" data-target="#modalPassword">
+                                <p>Esqueceu-se da sua password?</p>
+                            </a>
+                            <button type="submit" class="btn" id="btnEntrar">Entrar</button>
+                            <label id="txtErro" style="color:rgb(189, 84, 50); font-size:10pt" for="btnEntrar"></label>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal para confirmar envio de link para mudar de password -->
+    <div class="modal" id="modalPassword" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Pedir Nova Palavra-passe</h3>
+
+                    <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                </div>
+                <div class="modal-body">
+                    <p>Vamos enviar-lhe um email com um link que lhe permite alterar a sua Palavra-passe.</p>
+                    <form id="formNovaPassword">
+                        <div class="form-group">
+                            <label for="txtEmail">Email:</label>
+                            <input id='txtEmail' type='text' class='form-control' placeholder='Email' required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-close" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btn-confirmar" class="btn btn-default" data-dismiss="modal">Confirmar</button>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../assets/libs/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../assets/scripts/login.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
