@@ -1,0 +1,219 @@
+<div id="empresa-propostas">
+    <h3 class="title">As Suas Propostas de Estágio</h3>
+    <p>Aqui pode ver as propostas de estágio que inseriu na plataforma, o seu estado, e inserir novas propostas.</p>
+
+    <button class="btn" type="button" id="btnNovaProposta" data-target="#modalNovaProposta" data-toggle="modal">Nova Proposta de Estágio</button>
+
+
+    <table class="table table-bordered" id="table-propostas">
+        <thead>
+            <tr>
+                <th scope="col" id="id-proposta">Nº</th>
+                <th scope="col" id="descricao-proposta">Título</th>
+                <th scope="col" id="estado-proposta">Estado</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-propostas-empresa">
+        </tbody>
+    </table>
+</div>
+
+<!-- modal de nova proposta-->
+<div class="modal" id="modalNovaProposta" tab-index="-1" role="dialog">
+    <div class="modal-dialog" id="modal-novoUser2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Nova Proposta</h4>
+            </div>
+            <div clasS="modal-body">
+
+
+                <!-- Form de nova proposta -->
+
+                <form>
+                    <div class="form-group">
+
+                        <label for="titulo">Título da Proposta:</label>
+                        <input class="form-control" id="titulo" placeholder="Título" required="" type="text">
+                        <label>Descrição da Proposta:</label>
+                        <textarea class="form-control" id="descTrabalho" placeholder="Descrição de trabalho" required=""></textarea>
+                        <textarea class="form-control" id="descResultado" placeholder="Resultados esperados" required=""></textarea>
+                        <textarea class="form-control" id="descPlano" placeholder="Plano de Trabalho" required=""></textarea>
+                        <textarea class="form-control" id="descRecursos" placeholder="Recursos a utilizar" required></textarea>
+                        <textarea class="form-control" id="descOutros" placeholder="Outras informações (opcional)"></textarea>
+                        <textarea class="form-control" id="descPerfil" placeholder="Perfil do Candidato (opcional)"></textarea>
+
+
+                        <!--<textarea class="form-control" id="descEmpresa" placeholder="Empresa (só se for um aluno a preencher)"></textarea>-->
+
+                        <label>Informação do Tutor:</label>
+                        <input class="form-control" id="tutorNome" placeholder="Nome do Tutor" required="" type="text">
+                        <input class="form-control" id="tutorCargo" placeholder="Cargo do tutor" required="" type="text">
+                        <input class="form-control" id="tutorEmail" placeholder="Email do tutor" required="" type="text">
+                        <input class="form-control" id="tutorNum" placeholder="Nº Contacto do Tutor" required="" type="text">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="submitNovaProposta" class="btn btn-default" data-dismiss="modal">Criar Proposta</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para ver Informação de cada Proposta  -->
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="font-size:14px">
+            <div class="modal-header">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title" id="titulo-proposta">A Carregar...</h4>
+            </div>
+            <div class="modal-body">
+                <table  style="width:100%">
+                    <tbody>
+                        <tr rowspan="2"><td><b>Descrição</b></td></tr>
+                        <tr>
+                            <td>Trabalho:</td>
+                            <td id="desc_trabalho"></td>
+                        </tr>
+                        <tr>
+                            <td>Resultados:</td>
+                            <td id="desc_resultado"></td>
+                        </tr>
+                        <tr>
+                            <td>Plano:</td>
+                            <td id="desc_plano"></td>
+                        </tr>
+                        <tr>
+                            <td>Recursos:</td>
+                            <td id="desc_recursos"></td>
+                        </tr>
+                        <tr>
+                            <td>Perfil:</td>
+                            <td id="desc_perfil"></td>
+                        </tr>
+                        <tr>
+                            <td>Outro:</td>
+                            <td id="desc_outro"></td>
+                        </tr>
+                        <tr rowspan="2"><td><b>Tutor</b></td></tr>
+                        <tr>
+                            <td>Nome:</td>
+                            <td id="tutor_nome"></td>
+                        </tr>
+                        <tr>
+                            <td>Cargo:</td>
+                            <td id="tutor_cargo"></td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td id="tutor_email"></td>
+                        </tr>
+                        <tr>
+                            <td>Contacto:</td>
+                            <td id="tutor_contacto"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="footer-empresa"class="modal-footer">
+                <button type="button" id="btn-eliminar" class="btn btn-default" data-dismiss="modal">Eliminar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal para ver eliminar Proposta  -->
+<div id="modalEleminarProposta" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="font-size:14px">
+
+            <div class="modal-body" style="text-align:center">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 style="margin-bottom:5%">Tem a certeza de que quer eliminar a proposta?</h4>
+
+                <button type="button" id="btn-delete1" class="btn btn-default" data-dismiss="modal" data-target="#modalPropostaEleminada">Eliminar</button>
+                <button type="button" id="btn-close" class="btn btn-default" data-dismiss="modal" data-target="#modalEleminarProposta">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal proposta eliminada  -->
+<div id="modalPropostaEleminada" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="font-size:14px">
+            <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+            <div class="modal-body" style="text-align:center">
+                <h4 style="margin-bottom:5%">A proposta selecionada foi eleminada!</h4>
+
+                <button type="button" id="btn-close" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(" #btn-delete").click((item) => {
+        console.log("clicou");
+        // item.preventDefault();
+        $("#modalEleminarProposta").modal({ backdrop: true });
+    })
+    $(" #btn-delete1").click((item) => {
+        console.log("clicou");
+        // item.preventDefault();
+        $("#modalPropostaEleminada").modal({ backdrop: true });
+    })
+
+    $(document).ready(()=>{
+        loadPropostasOfEmpresa();
+
+        $("#submitNovaProposta").click((e)=>{
+            // validar se itens estão vazios
+            if( $("#titulo").val() == "" ||
+                $("#descTrabalho").val() == "" ||
+                $("#descPlano").val() == "" ||
+                $("#descRecursos").val() == "" ||
+                $("#tutorNome").val() == "" ||
+                $("#tutorCargo").val() == "" ||
+                $("#tutorEmail").val() == "" ||
+                $("#tutorNum").val() == ""){
+                    alert("Há campos por prêencher!");
+                    e.stopImmediatePropagation();
+                    return;
+                }
+
+
+            //buscar items
+            let proposta = {
+                titulo: $("#titulo").val(),
+                desc_trabalho: $("#descTrabalho").val(),
+                desc_resultado: $("#descResultado").val(),
+                desc_outro: $("#descOutro").val(),
+                desc_plano: $("#descPlano").val(),
+                desc_perfil: $("#descPerfil").val(),
+                desc_recursos: $("#descRecursos").val(),
+
+                tutor_nome: $("#tutorNome").val(),
+                tutor_cargo: $("#tutorCargo").val(),
+                tutor_email: $("#tutorEmail").val(),
+                tutor_num: $("#tutorNum").val(),
+            }
+
+            savePropostaByEmpresa(proposta)
+
+        })
+
+    });
+</script>

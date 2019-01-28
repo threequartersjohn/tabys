@@ -1,0 +1,172 @@
+<!-- modal de novo contacto -->
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Novo Contacto</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group" >
+                        <label for="tipoNovoContacto"> Tipo de Contacto</label>
+                        <select class="form-control" id="tipoNovoContacto">
+                            <option>Localidade</option>
+                            <option>Telefone</option>
+                            <option>Telemóvel</option>
+                            <option>Email Secundário</option>
+                        </select>
+                        <label for="descNovoContacto">Descrição</label>
+                        <input class="form-control" id="descNovoContacto" type="text">
+                        <div id="descContactosNome">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn" type="button" id="btnNovoContacto">Confirmar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="perfil">
+    <!-- gerir contactos -->
+    <div id="perfil-contactos">
+        <div>
+            <h3 class="title">
+                Os Seus Contactos
+            </h3>
+
+            <button class="btn" type="button" id="novo-contacto" data-toggle="modal" data-target="#myModal">Novo Contacto</button>
+
+        </div>
+
+        <table class="table" id="table-perfil">
+            <thead>
+                <tr>
+                    <th scope="col">Tipo de Contacto</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-contactos-user">
+                <tr>
+                    <td scope="row">Localidade</td>
+                    <td id="localizacao-user"></td>
+                </tr>
+                <tr>
+                    <td scope="row">Nº Telefone</td>
+                    <td id="n-telefone-user"></td>
+                </tr>
+                <tr>
+                    <td scope="row">Nº Telemóvel</td>
+                    <td id="n-telemovel-user"></td>
+                </tr>
+                <tr>
+                    <td scope="row">Email secundário</td>
+                    <td id="email-secundario-user"></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!-- Table para contactos no caso de ser uma empresa-->
+        <div id="tabela-contactos-empresa"></div>
+
+    </div>
+    <hr>
+    <!-- mudar password -->
+    <div id="perfil-password">
+        <h3 class="title">Mudar Palavra-passe</h3>
+        <form id="formNovaPassword">
+            <div class="form-group">
+                <input class="form-control" id="pass-antiga" type="password" placeholder="Palavra-passe" \>
+                <input class="form-control" id="pass-nova" type="password" placeholder="Nova Palavra-passe" \>
+                <button class="btn" type="button" id="btnNovaPassword">Confirmar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="../assets/scripts/perfil.js"></script>
+
+<script>
+    $(document).ready(()=>{
+
+        //carregar contactos para perifl ao carregar página
+        loadContactosInSession();
+
+        //colocar contactos de empresa na lista se for empresa
+        if(window.location.href.includes("/empresa")) {
+            let html =  "<option>Contacto Priveligiado</option>"
+                       +"<option>Responsável</option>";
+            $("#tipoNovoContacto").append(html);
+        }
+
+        $("#tipoNovoContacto").change(()=>{
+            let tipo = $('#tipoNovoContacto').find(":selected").text();
+            let html =  '<label for="descNovoContactoNome">Nome</label>'
+                        +'<input class="form-control" id="descNovoContactoNome" type="text">';
+
+            switch(tipo) {
+                case "Contacto Priveligiado":
+                case "Responsável": $("#descContactosNome").html(html); break;
+                case "Localidade":
+                case "Telefone":
+                case "Temelóvel":
+                case "Email Secundário": $("#descContactosNome").html(""); break;
+            }
+        })
+
+        //Novo contacto
+        $("#btnNovoContacto").click((e)=>{
+
+            if( $("#descNovoContacto").val() == "") {
+                console.log("Descrição vazia!");
+                return;
+            }
+
+            console.log("carregou")
+            let desc = $("#descNovoContacto").val();
+            let tipo = $('#tipoNovoContacto').find(":selected").text();
+
+
+            let nome = "";
+
+            if(window.location.href.includes("/empresa")){
+                if($("#descNovoContactoNome").val()==""){
+                    console.log("Nome vazio!")
+                    return;
+                }
+
+                nome = $("#descNovoContactoNome").val();
+                novoContacto(desc, tipo, nome);
+
+            }
+
+            else novoContacto(desc, tipo);
+
+        });
+
+        //Mudar password
+        $("#btnNovaPassword").click((e)=>{
+            let password = $("#pass-antiga").val();
+            let novaPassword = $("#pass-nova").val();
+
+            if(password=="" || novaPassword == ""){
+                alert("Campos não prêenchidos!");
+                return;
+            }
+
+            updatePassword(password, novaPassword);
+        })
+
+
+
+
+    });
+
+
+
+</script>

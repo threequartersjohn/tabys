@@ -1,0 +1,215 @@
+<div class="modal" id="modalNovaProposta" tab-index="-1" role="dialog">
+    <div class="modal-dialog" id="modal-novoUser2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Nova Proposta</h4>
+            </div>
+            <div clasS="modal-body">
+
+
+                <!-- Form de nova proposta -->
+
+                <form>
+                    <div class="form-group">
+                        <label for="titulo">Título da Proposta:</label>
+                        <input class="form-control" id="titulo" placeholder="Título" required="" type="text">
+                        <label>Descrição da Proposta:</label>
+                        <textarea class="form-control" id="descTrabalho" placeholder="Descrição de trabalho" required></textarea>
+                        <textarea class="form-control" id="descResultado" placeholder="Resultados esperados" required></textarea></textarea>
+                        <textarea class="form-control" id="descPlano" placeholder="Plano de Trabalho" required></textarea>
+                        <textarea class="form-control" id="descRecursos" placeholder="Recursos a utilizar" required></textarea>
+                        <textarea class="form-control" id="descEmpresa" placeholder="Empresa" required></textarea>
+                        <textarea class="form-control" id="descOutros" placeholder="Outras informações (opcional)"></textarea>
+                        <textarea class="form-control" id="descPerfil" placeholder="Perfil do Candidato (opcional)"></textarea>
+
+
+                        <label>Informação do Tutor:</label>
+                        <input class="form-control" id="tutorNome" placeholder="Nome do tutor" required="" type="text">
+                        <input class="form-control" id="tutorCargo" placeholder="Cargo do tutor" required="" type="text">
+                        <input class="form-control" id="tutorEmail"placeholder="Email do tutor" required="" type="text">
+                        <input class="form-control" id="tutorNum" placeholder="Nº Contacto do tutor" required="" type="text">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="submitNovaProposta" class="btn btn-default" data-dismiss="modal">Criar Proposta</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Eliminar -->
+<div id="modalEliminado" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body" style="text-align:center">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title">A candidatura foi anulada.</h4>
+                <br>
+                <button type="button" id="btn-fechar" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- modal de preferências-->
+<div class="modal" id="modalPreferencias" tab-index="-1" role="dialog">
+    <div class="modal-dialog" id="modal-novoUser2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title">As suas preferências</h4>
+            </div>
+            <div clasS="modal-body">
+
+                <table clasS="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="pref-id-proposta">Nº</th>
+                            <th scope="col" id="pref-titulo-proposta">Título</th>
+                        </tr>
+                    </thead>
+                    <tbody id="preferencias-aluno">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para ver Informação de cada Proposta  -->
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="font-size:14px">
+            <div class="modal-header">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title" id="titulo-proposta">A Carregar...</h4>
+            </div>
+            <div class="modal-body">
+                <table  style="width:100%">
+                    <tbody>
+                        <tr rowspan="2"><td><b>Descrição</b></td></tr>
+                        <tr>
+                            <td>Trabalho:</td><br>
+                            <td id="desc_trabalho"></td>
+                        </tr>
+                        <tr>
+                            <td>Resultados:</td><br>
+                            <td id="desc_resultado"></td>
+                        </tr>
+                        <tr>
+                            <td>Plano:</td><br>
+                            <td id="desc_plano"></td>
+                        </tr>
+                        <tr>
+                            <td>Recursos:</td><br>
+                            <td id="desc_recursos"></td>
+                        </tr>
+                        <tr>
+                            <td>Perfil:</td><br>
+                            <td id="desc_perfil"></td>
+                        </tr>
+                        <tr>
+                            <td>Outro:</td><br>
+                            <td id="desc_outro"></td>
+                        </tr>
+                        <tr rowspan="2"><td><b>Tutor</b></td></tr>
+                        <tr>
+                            <td>Nome:</td>
+                            <td id="tutor_nome"></td>
+                        </tr>
+                        <tr>
+                            <td>Cargo:</td>
+                            <td id="tutor_cargo"></td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td id="tutor_email"></td>
+                        </tr>
+                        <tr>
+                            <td>Contacto:</td>
+                            <td id="tutor_contacto"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id = "footer-aluno" class="modal-footer">
+                <button type="button" id="btn-accept" class="btn btn-default" data-dismiss="modal">Aceitar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="aluno-propostas">
+    <h3 class="title">Propostas de Estágio</h3>
+    <p>Aqui pode ver as Propostas de Estágio disponíveis, e demonstrar preferência nas que lhe interessa.</p>
+
+    <button class="btn" type="button" id="btnPreferencias" data-toggle="modal" data-target="#modalPreferencias">Ver Preferências</button>
+    <button class="btn" type="button" id="btnNovaProposta" data-toggle="modal" data-target="#modalNovaProposta">Criar Proposta</button>
+
+
+    <table class="table table-bordered" id="table-propostas">
+        <thead>
+            <tr>
+                <th scope="col" id="id-proposta">Nº</th>
+                <th scope="col" id="descricao-proposta">Título</th>
+                <th scope="col" id="responsavel-proposta">Empresa</th>
+                <th scope="col" id="estado-proposta">Estado</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-propostas-aluno">
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(()=>{
+        loadPropostasValidadas();
+        loadPreferenciasByEmail();
+
+        $("#submitNovaProposta").click((e)=>{
+            // validar se itens estão vazios
+            if( $("#titulo").val() == "" ||
+                $("#descTrabalho").val() == "" ||
+                $("#descPlano").val() == "" ||
+                $("#descRecursos").val() == "" ||
+                $("#descEmpresa").val() == "" ||
+                $("#tutorNome").val() == "" ||
+                $("#tutorCargo").val() == "" ||
+                $("#tutorEmail").val() == "" ||
+                $("#tutorNum").val() == ""){
+                    alert("Há campos por prêencher!")
+                    e.stopImmediatePropagation();
+                    return;
+                }
+
+            //buscar items
+            let proposta = {
+                titulo: $("#titulo").val(),
+                desc_trabalho: $("#descTrabalho").val(),
+                desc_resultado: $("#descResultado").val(),
+                desc_outro: $("#descOutro").val(),
+                desc_plano: $("#descPlano").val(),
+                desc_perfil: $("#descPerfil").val(),
+                desc_recursos: $("#descRecursos").val(),
+                desc_empresa: $("#descEmpresa").val(),
+
+                tutor_nome: $("#tutorNome").val(),
+                tutor_cargo: $("#tutorCargo").val(),
+                tutor_email: $("#tutorEmail").val(),
+                tutor_num: $("#tutorNum").val(),
+            }
+
+            savePropostaByAluno(proposta)
+
+        })
+
+    });
+</script>

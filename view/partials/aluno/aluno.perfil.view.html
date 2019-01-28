@@ -1,0 +1,239 @@
+<!-- modal de novo documento-->
+<div class="modal" id="modalNovoDocumento" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Novo Documento</h4>
+            </div>
+            <!-- Escolher Qual O User a Criar -->
+            <div class="modal-body">
+                <label for="tipoNovoContacto"> Tipo de Contacto</label>
+                        <select class="form-control" id="tipoNovoDocumento">
+                            <option>Currículo</option>
+                            <option>Portfólio</option>
+                            <option>Outro</option>
+                        </select>
+
+                <!-- Form de Novo User -->
+            </div>
+            <div class="modal-footer">
+                <input id="doc-file" type="file" style="display:none"></input>
+                <button type="file" id="submitNovoDocumento" class="btn btn-default" onclick="document.getElementById('doc-file').click();">Carregar Documento</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal de novo contacto -->
+<div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Novo Contacto</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="tipoNovoContacto"> Tipo de Contacto</label>
+                        <select class="form-control" id="tipoNovoContacto">
+                            <option>Telefone</option>
+                            <option>Telemóvel</option>
+                            <option>Email Secundário</option>
+                            <option>Localidade</option>
+                        </select>
+                        <label for="descNovoContacto">Descrição</label>
+                        <input class="form-control" id="descNovoContacto" type="text">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" type="button" data-dismiss="modal">Cancelar</button>
+                        <button class="btn" type="button" id="btnNovoContacto">Confirmar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="perfil">
+    <!-- gerir contactos -->
+    <div id="perfil-contactos">
+        <div>
+            <h3 class="title" >
+                Os Seus Contactos
+            </h3>
+
+            <button class="btn" type="button" id="novo-contacto" data-toggle="modal" data-target="#myModal">Novo Contacto</button>
+
+        </div>
+
+        <table class="table" id="table-perfil">
+            <thead>
+                <tr>
+                    <th scope="col">Tipo de Contacto</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-contactos-user">
+                <tr>
+                    <td scope="row">Localidade</td>
+                    <td id="localizacao-user"></td>
+                </tr>
+                <tr>
+                    <td scope="row">Nº Telefone</td>
+                    <td id="n-telefone-user"></td>
+                </tr>
+                <tr>
+                    <td scope="row">Nº Telemóvel</td>
+                    <td id="n-telemovel-user"></td>
+                </tr>
+                <tr>
+                    <td scope="row">Email secundário</td>
+                    <td id="email-secundario-user"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <hr>
+    <!-- gerir documentos -->
+    <div id="perfil-documentos">
+        <div>
+            <h3 class="title" >
+                Os Seus Documentos
+            </h3>
+
+            <button class="btn" type="button" id="novo-documento" data-toggle="modal" data-target="#modalNovoDocumento">Novo Documento</button>
+
+        </div>
+
+        <table class="table" id="table-perfil">
+            <thead>
+                <tr>
+                    <th scope="col">Tipo de Documento</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">Currículo</td>
+                    <td id="doc-curriulo"></td>
+                </tr>
+                <tr>
+                    <td scope="row">Portfólio</td>
+                    <td id="doc-portfolio"></td>
+                </tr>
+                <tr>
+                    <td scope="row">Outro</td>
+                    <td id="doc-outro"></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <hr>
+    <!-- mudar password -->
+    <div id="perfil-password">
+        <h3 class="title">Mudar Palavra-passe</h3>
+        <form id="formNovaPassword">
+            <div class="form-group">
+                <input class="form-control" id="pass-antiga" type="password" placeholder="Palavra-passe" \>
+                <input class="form-control" id="pass-nova" type="password" placeholder="Nova Palavra-passe" \>
+                <button class="btn" type="button" id="btnNovaPassword">Confirmar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="../assets/scripts/perfil.js"></script>
+
+<script>
+    $(document).ready(()=>{
+
+        //carregar contactos para perfil ao carregar página
+        loadContactosInSession();
+
+        //carregar documentos para perfil
+        loadDocumentos();
+
+        //colocar contactos de empresa na lista se for empresa
+        if(window.location.href.includes("/empresa")) {
+            let html =  "<option>Contacto Priveligiado</option>"
+                       +"<option>Responsável</option>";
+            $("#tipoNovoContacto").append(html);
+        }
+
+        $("#tipoNovoContacto").change(()=>{
+            let tipo = $('#tipoNovoContacto').find(":selected").text();
+            let html =  '<label for="descNovoContactoNome">Nome</label>'
+                        +'<input class="form-control" id="descNovoContactoNome" type="text">';
+
+            switch(tipo) {
+                case "Contacto Priveligiado":
+                case "Responsável": $("#descContactosNome").html(html); break;
+                case "Localidade":
+                case "Telefone":
+                case "Temelóvel":
+                case "Email Secundário": $("#descContactosNome").html(""); break;
+            }
+        })
+
+        //Novo contacto
+        $("#btnNovoContacto").click((e)=>{
+
+            if( $("#descNovoContacto").val() == "") {
+                console.log("Descrição vazia!");
+                return;
+            }
+
+            console.log("carregou")
+            let desc = $("#descNovoContacto").val();
+            let tipo = $('#tipoNovoContacto').find(":selected").text();
+
+
+            let nome = "";
+
+            if(window.location.href.includes("/empresa")){
+                if($("#descNovoContactoNome").val()==""){
+                    console.log("Nome vazio!")
+                    return;
+                }
+
+                nome = $("#descNovoContactoNome").val();
+                novoContacto(desc, tipo, nome);
+
+            }
+
+            else novoContacto(desc, tipo);
+
+        });
+
+        //Mudar password
+        $("#btnNovaPassword").click((e)=>{
+            let password = $("#pass-antiga").val();
+            let novaPassword = $("#pass-nova").val();
+
+            if(password=="" || novaPassword == ""){
+                alert("Campos não prêenchidos!");
+                return;
+            }
+
+            updatePassword(password, novaPassword);
+        })
+
+        //Novo documento
+        $("#doc-file").change((e)=>{
+            let tipo = $('#tipoNovoDocumento').find(":selected").text();
+            novoDocumento(e.currentTarget.files[0], tipo)
+        })
+
+
+
+
+    });
+
+
+
+</script>
+

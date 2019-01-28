@@ -1,0 +1,14 @@
+&nbsp; &nbsp; &nbsp; &nbsp;<b>TABYS</b> é plataforma web dedicada ao auxílio de diversos processos a que os estágios estão sujeitos,
+de forma a que tudo se torne simples, rápido e eficaz.<br><br>
+
+&nbsp; &nbsp; &nbsp; &nbsp;A nossa plataforma de estágios auxilia o apoio ao processo de angariação, atribuição e gestão dos
+estágios de alunos de Tecnologias e Sistemas de Informação para a Web da ESMAD.<br>
+Os objetivos principais da nossa plataforma web são os seguintes:<br>
+&nbsp; &nbsp;1.	Proposição de projetos de estágio por parte das empresas ou alunos; <br>
+&nbsp; &nbsp;2.	Análise e validação das propostas por parte do coordenador de curso; <br>
+&nbsp; &nbsp;3.	Permitir aos alunos avaliar cada proposta e inserir as suas preferências de estágio; <br>
+&nbsp; &nbsp;4.	Abrir contacto entre os alunos e as empresas para que acordem a relação de estágio; <br>
+&nbsp; &nbsp;5.	Geração de documentação associada à formalização dos estágios; <br>
+&nbsp; &nbsp;6.	Buscas organizadas e personalizadas que permitam visualizar informação relevante; <br>
+&nbsp; &nbsp;7.	Suporte durante o estágio, com um sistema de anotações e comentários que permite comunicação entre estagiário e orientador ou <br>
+até o registo de anotações privadas.

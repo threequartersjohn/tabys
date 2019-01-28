@@ -1,0 +1,881 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =======================================================
+
+* ======================================================= */
+
+body {
+  font-family: 'Raleway', sans-serif;
+  /* font-family: "Roboto", Arial, sans-serif; */
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: white;
+  overflow: auto;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 13px;
+  }
+
+  #users,
+  #datas,
+  #aluno-propostas,
+  #empresa-propostas,
+  #perfil,
+  #coordenador-propostas {
+    margin-top: 15%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+
+}
+
+a {
+  color: #228896;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/*a:hover,*/
+/*a:focus {*/
+/*  color: #228896;*/
+/*  outline: none;*/
+/*  text-decoration: none !important;*/
+/*}*/
+
+p {
+  margin-bottom: 1.5em;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  margin: 0 0 0 0;
+}
+
+h3 {
+  margin: 0 0 15px 0;
+}
+
+figure {
+  margin-bottom: 2.5em;
+  float: left;
+  width: 100%;
+}
+
+figure figcaption {
+  font-size: 16px;
+  width: 80%;
+  margin: 20px auto 0px auto;
+  color: #b3b3b3;
+  font-style: italic;
+  font-family: "Roboto", Arial, sans-serif;
+}
+#div-search{
+  float:left;
+}
+@media screen and (max-width: 480px) {
+  figure figcaption {
+    width: 100%;
+  }
+  #div-search{
+    float:none;
+  }
+}
+
+::-webkit-selection {
+  color: #fff;
+  background: #228896;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #228896;
+}
+
+::selection {
+  color: #fff;
+  background: #228896;
+}
+
+body {
+  background-color: white;
+  overflow:auto;
+}
+
+#main-page #main-cont #sobre {
+  top: 0%;
+  bottom: 0%;
+  width: 75%;
+  float: right;
+  position: absolute;
+  z-index: 1;
+}
+
+#tabys-aside {
+  z-index: 1000;
+  float: left;
+  /*padding-top: 60px;*/
+  padding-bottom: 40px;
+  width: 25%;
+  /*width: 300px;*/
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  /* overflow-y: scroll; */
+  /*z-index: 1001;*/
+  /*-webkit-transition: 0.5s;*/
+  /*-o-transition: 0.5s;*/
+  /*transition: 0.5s;*/
+  background-color: #d9d1d4;
+}
+
+#tabys-collapse {
+  background-color: #d9d1d4;
+  height: 50px;
+}
+
+#tabys-collapse-menu {
+  background-color: #d9d1d4;
+}
+
+#logotipo {
+  width: 60%;
+}
+
+@media screen and (max-width: 1200px) {
+  #tabys-aside {
+    width: 25%;
+  }
+  #main-cont {
+    width: 75%;
+    float: right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  #cross {
+    display: block;
+    margin-top: 4%;
+  }
+  #hamburguer {
+    z-index: 99;
+    position: absolute;
+    background-color: transparent;
+    float: left;
+    margin-left: 2%;
+    display: block;
+    margin-top: 2%;
+    width: 35px;
+    height: 37px;
+    background-image: url("../images/hamburguer.png");
+    background-size: 50px 38px;
+
+    /*font-size: 50px;*/
+  }
+  #tabys-aside .footer {
+    position: relative;
+    bottom: 0;
+  }
+  #main-cont {
+    width: 100%;
+    /*float: center;*/
+  }
+  #main-page #main-cont #sobre {
+
+    width: 100%;
+  }
+  .panel {
+    height:100%;
+    width: 100%;
+  }
+
+  #tabys-aside #main-menu ul {
+    margin: 0 0 2em 0;
+  }
+
+  #tabys-aside {
+    display: none;
+  }
+}
+
+#tabys-aside #tabys-logo {
+  text-align: center;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 38px;
+}
+
+
+#tabys-aside #tabys-logo a {
+  color: #000;
+}
+
+#tabys-aside #tabys-logo label {
+  font-size: 15px;
+}
+
+#tabys-aside #main-menu ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+#tabys-aside #main-menu ul li {
+  margin: 0 0 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+#tabys-aside #main-menu ul li a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  padding: 10px 10px;
+  letter-spacing: .2em;
+
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: "Roboto", Arial, sans-serif;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#tabys-aside #main-menu ul li a:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 7px;
+  left: 10px;
+  right: 10px;
+  background-color: #bd5432;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#tabys-aside #main-menu ul li a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#tabys-aside #main-menu ul li a:hover:after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+#tabys-aside .footer {
+  position: absolute;
+  bottom: 40px;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0 20px;
+}
+
+
+#tabys-aside .footer span {
+  display: block;
+}
+
+#tabys-aside .footer ul {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#tabys-aside .footer ul li {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  list-style: none;
+}
+
+#tabys-aside .footer ul li a {
+  color: rgba(0, 0, 0, 0.7);
+  padding: 4px;
+}
+
+#tabys-aside .footer ul li a:hover,
+#tabys-aside .footer ul li a:active,
+#tabys-aside .footer ul li a:focus {
+  text-decoration: none;
+  outline: none;
+  color: #bd5432;
+}
+
+/*
+*LOGIN-----------------------------------------------------------------------------------------
+*/
+
+.card {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  /*position: relative;*/
+  margin-top: 50%;
+  margin-bottom: 50%;
+  /*10% from the top and centered */
+  padding-top: 3%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  padding-right: 3%;
+  border-radius: 0px;
+  width: 100%;
+  font-family: Roboto;
+}
+
+.head {
+  margin-top: 30px;
+}
+
+#txtUser,
+#txtPassword,
+#txtNovaPassword,
+#txtContacto,
+#txtEmail {
+  border-radius: 0px;
+
+}
+
+#txtUser {
+  background-image: url(../images/user.png);
+  background-size: 5%;
+  background-repeat: no-repeat;
+  background-position: 6px;
+}
+
+#btn-chat {
+  background-image: url(../images/sent.png);
+  background-size: 5%;
+  background-repeat: no-repeat;
+  background-position: 6px;
+}
+
+#cross {
+  background-color: transparent;
+  float: right;
+  margin-right: 2%;
+  margin-top: 1%;
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/cross.png");
+  background-size: 38px 38px;
+}
+
+#cross1 {
+  margin-bottom: 20%;
+}
+
+#txtPassword,
+#txtNovaPassword {
+  background-image: url(../images/password.png);
+  background-size: 4%;
+  background-repeat: no-repeat;
+  background-position: 6px;
+}
+
+#txtEmail {
+  background-image: url(../images/email-icon.png);
+  background-repeat: no-repeat;
+  background-position: 6px;
+}
+
+#txtContacto {
+  background-image: url(../images/call.png);
+  background-size: 5%;
+  background-repeat: no-repeat;
+  background-position: 7px;
+}
+
+#btnEntrar {
+  border-radius: 0px;
+  background-color: white;
+  color: #494949;
+  border-color: #bd5432;
+}
+
+#btnEntrar:hover {
+  background-color: #bd5432;
+  color: white;
+}
+
+#btnCancelar {
+  border-radius: 0px;
+  background-color: white;
+  color: #494949;
+  border-color: #bd5432;
+}
+
+#btnCancelar:hover {
+  background-color: #bd5432;
+  color: white;
+}
+
+/* responsive queries */
+
+@media (min-width: 360px) {
+
+  .card {
+    /*width: 73%;*/
+    height: 83%
+  }
+  #txtUser {
+    background-size: 10%;
+    padding-left: 15%;
+  }
+
+  #txtPassword,
+  #txtNovaPassword,
+  #txtEmail,
+  #txtContacto {
+    background-size: 9%;
+    padding-left: 15%;
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    /*width: 73%;*/
+    height: 83%
+  }
+  #txtUser {
+    background-size: 10%;
+    padding-left: 15%;
+  }
+
+  #txtPassword,
+  #txtNovaPassword,
+  #txtEmail,
+  #txtContacto {
+    background-size: 9%;
+    padding-left: 15%;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .btn {
+    /*width: 100px;*/
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  #txtUser {
+    background-size: 7%;
+    padding-left: 10%;
+  }
+  #cross {
+    display: none;
+  }
+  #hamburguer {
+    display: none;
+
+  }
+  #txtPassword,
+  #txtNovaPassword,
+  #txtEmail,
+  #txtContacto {
+    background-size: 6%;
+    padding-left: 10%;
+  }
+  #main-cont {
+    width: 75%;
+    float: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn {
+    /*width: 100px;*/
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+  /*#maint-cont {*/
+  /*  padding-left: 5% !important;*/
+  /*}*/
+  #users,
+  #datas,
+  #aluno-propostas,
+  #empresa-propostas,
+  #perfil,
+  #coordenador-propostas {
+    margin: 5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn {
+    /*width: 120px;*/
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+  #txtUser {
+    background-size: 6%;
+    padding-left: 10%;
+  }
+
+  #txtPassword,
+  #txtNovaPassword,
+  #txtEmail,
+  #txtContacto {
+    background-size: 5%;
+    padding-left: 10%;
+  }
+
+  #pagLogin {
+    margin-right:10%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    width:500px;
+    /*height:20%;*/
+  }
+
+  input::placeholder {
+    font-size: 0.8em;
+  }
+}
+
+/*
+*LOGIN-----------------------------------------------------------------------------
+*/
+
+/*
+*UTILIZADORES-ADMIN----------------------------------------------------------------
+*/
+#btnNovaProposta,
+#btnPreferencias,
+#link-criar,
+#link-conf {
+  /*width: 50%;*/
+  height: 15%;
+  font-family: Roboto;
+  font-size: 14px;
+  margin-right: 3%;
+  margin-bottom:3%;
+  /*float: right;*/
+
+}
+
+.sub-menu {
+
+  display: none;
+
+}
+
+/*
+*PROPOSTAS------------------------------------------------------------
+*/
+#modalEliminado .modal-content,
+#modalNovoDocumento .modal-content,
+#modalPreferencias .modal-content,
+#modalVerUser .modal-content,
+#modalNovaPublicacao .modal-content,
+#modalValidado .modal-content,
+#modalEleminarProposta .modal-content,
+#modalPropostaEleminada .modal-content,
+#modalNovaProposta .modal-content,
+#modalVerProposta .modal-content,
+#myModal .modal-content,
+#myModal2 .modal-content,
+#modalPassword .modal-content,
+#modalRecusado .modal-content,
+#modalRecusar .modal-content {
+  margin: 10% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 0px;
+  width: 100%;
+  /* Could be more or less, depending on screen size */
+}
+
+h5 {
+  font-weight: bold;
+  margin-bottom: 1%;
+}
+
+.modal-footer #btn-close {
+  border-radius: 0px;
+  background-color: #bd5432;
+  color: white;
+}
+
+.modal-footer #btn-candidatar {
+  border-radius: 0px;
+  background-color: #bd5432;
+  color: white;
+}
+
+
+.tipo-proposta {
+  margin-right: 10%;
+  font-size: 11pt;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold
+}
+
+.tipo-proposta:hover {
+  color: #bd5432;
+}
+
+.tipo-proposta:active {
+  color: #bd5432;
+}
+
+#table-propostas {
+  margin-top: 2%;
+  font-family: "Roboto", sans-serif;
+
+}
+
+tbody {
+  color: rgb(26, 25, 25);
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="submit"],
+input[type="date"],
+input[type="button"],
+textarea[class="form-control"],
+select[class=form-control] {
+  border-radius: 0px;
+
+  margin-bottom: 1%;
+}
+a[type="button"],
+button[type="button"],
+button[type="file"] {
+  font-size:14px;
+  border-radius: 0px;
+  background-color: #bd5432;
+  color: white;
+}
+a[class="btn"]:active{
+
+  background-color: white;
+}
+
+.btn-group {
+
+  border-radius: 0px;
+  font-size: 14px;
+  margin-bottom:2%;
+  margin-top:2%;
+}
+
+#pass-antiga,
+#pass-nova {
+  width: 250px;
+}
+
+.about {
+  margin-right: 10%;
+  font-size: 11pt;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  float: center;
+  color: #c66b4f;
+}
+
+.about:hover {
+  color: #a85a43;
+}
+
+.about:active {
+  color: #bd5450;
+}
+
+/*#list-estudantes:active, #list-empresas:active, #list-orientadores:activee{*/
+/*  color:red;*/
+/*}*/
+/*
+*pagination------------------
+*/
+
+ul .pagination {
+  bottom: 40px;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+}
+
+#novo-contacto,
+#novo-documento{
+  float: right;
+  vertical-align: text-top;
+}
+
+#table-perfil {
+  margin-bottom: 2%;
+}
+
+#perfil-password {
+  margin-top: 2%;
+}
+
+#txtarea-comment {
+  width: 100%;
+  resize: vertical;
+  max-height: 300px;
+  min-height: 150px;
+}
+
+#btn-close-modal {
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+  border-style: none;
+  float: right;
+}
+
+.panel {
+  border-radius: 0;
+}
+
+/*imagem de fundo para o início*/
+
+#sobre {
+  height: 100%;
+  background: linear-gradient(rgba(255, 179, 158, 0.2), #f5f5f5, #f5f5f5, #f5f5f5), url("../images/escola.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+#tabys-collapse {
+  display: none;
+}
+
+#tabys-collapse-toggle {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0zIDE4aDE4di0ySDN2MnptMC01aDE4di0ySDN2MnptMC03djJoMThWNkgzeiIvPgo8L3N2Zz4=");
+  font-size: 24px;
+}
+
+@media (max-width: 400px) {
+  .navbar-toggler {
+    display: inherit;
+  }
+}
+
+/*CSS para publicações ----------------------------------*/
+
+#pub-content {
+  margin-top: 50px;
+  background: #d9d1d4;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+#pub-titulo {
+  margin: 1%;
+  margin-bottom: 2%;
+  text-align: center;
+  font-weight: bold;
+}
+
+#pub-footer {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+#pub-data,
+#comment-footer {
+  text-align: right
+}
+
+#comment {
+  padding: 1%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+
+  background: #d9d1d4;
+  font-size: 12px;
+}
+
+#row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+#pub {
+  background: white;
+  margin-bottom: 1%;
+
+}
+
+#nome-autor {
+  float: right;
+  font-weight: bold;
+}
+
+#data {
+  font-style: italic;
+  font-size: 12px;
+}
+
+/*-------------------------------------------------------*/
+
+#add-info {
+  height:auto !important;
+}
+
+
+
+/*------*/
+#comentario{
+  background-image: url("../images/sent.png");
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,35 @@
+/*jello*/
+
+@font-face {
+    font-family: 'PortoSans-Bold';
+    src: url('../fonts/PortoSans-Bold.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'PortoSans-Regular';
+    src: url('../fonts/PortoSans-Regular.otf') format('opentype');
+    font-weight: normal;
+}
+
+.row {
+    right:0%;
+    height:100%;
+    font-family: "PortoSans-Regular";
+}
+
+#logo {
+    text-align:center;
+    padding:10%;
+}
+
+#menu {
+    padding-left:10%;
+}
+
+
+#sobre {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20%;
+}

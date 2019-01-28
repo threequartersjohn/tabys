@@ -1,0 +1,209 @@
+<div id="coordenador-propostas">
+    <h3 class="title">Propostas</h3>
+    <aside>
+        <a href="#" class="tipo-proposta" id="list-todas-propostas">Tudo</a>
+        <a href="#" class="tipo-proposta" id="list-empresa-propostas">Empresa</a>
+        <a href="#" class="tipo-proposta" id="list-estudante-propostas">Estudante</a>
+    </aside>
+
+    <table class="table table-bordered table-condensed" id="table-propostas">
+        <thead>
+            <tr>
+                <th scope="col" id="id-proposta">Nº</th>
+                <th scope="col" id="descricao-proposta">Título</th>
+                <th scope="col" id="responsavel-proposta">Responsável</th>
+                <th scope="col" id="estado-proposta">Estado</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-propostas-cdc">
+        </tbody>
+    </table>
+</div>
+
+<!--Modal para ver Orientadores-->
+<div class="modal" id="modalOrientadores" tab-index="-1" role="dialog">
+    <div class="modal-dialog" id="modal-novoUser2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Orientadores</h4>
+            </div>
+            <div clasS="modal-body">
+
+                <table clasS="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orientador-aluno">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal ver Proposta -->
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="font-size:14px">
+            <div class="modal-header">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title" id="titulo-proposta">A Carregar...</h4>
+            </div>
+            <div class="modal-body">
+                <table  style="width:100%">
+                    <tbody>
+                        <tr rowspan="2"><td><b>Descrição</b></td></tr>
+                        <tr>
+                            <td>Trabalho:</td>
+                            <td id="desc_trabalho"></td>
+                        </tr>
+                        <tr>
+                            <td>Resultados:</td>
+                            <td id="desc_resultado"></td>
+                        </tr>
+                        <tr>
+                            <td>Plano:</td>
+                            <td id="desc_plano"></td>
+                        </tr>
+                        <tr>
+                            <td>Recursos:</td>
+                            <td id="desc_recursos"></td>
+                        </tr>
+                        <tr>
+                            <td>Perfil:</td>
+                            <td id="desc_perfil"></td>
+                        </tr>
+                        <tr>
+                            <td>Outro:</td>
+                            <td id="desc_outro"></td>
+                        </tr>
+                        <tr rowspan="2"><td><b>Tutor</b></td></tr>
+                        <tr>
+                            <td>Nome:</td>
+                            <td id="tutor_nome"></td>
+                        </tr>
+                        <tr>
+                            <td>Cargo:</td>
+                            <td id="tutor_cargo"></td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td id="tutor_email"></td>
+                        </tr>
+                        <tr>
+                            <td>Contacto:</td>
+                            <td id="tutor_contacto"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="footer-proposta" class="modal-footer">
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal Recusar -->
+<div id="modalRecusar" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title">Recusar</h4>
+                <p>Descrição: <span id="titulo-proposta" style="display:inline-block">Estágio Profissional Informática</span></p>
+
+                <p>Deixa o seu comentário aqui:</p>
+                <textarea class="form-control" id="recusar-msg"  required></textarea>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-recusar-proposta" class="btn btn-default" data-dismiss="modal">Recusar</button>
+                <button type="button" id="btn-recusar" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal Recusado -->
+<div id="modalRecusado" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body" style="text-align:center">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title">A proposta foi recusada.</h4>
+                <p>O comentário foi enviado com sucesso!</p>
+                <button type="button" id="btn-fechar" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal Validadas -->
+<div id="modalValidado" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body" style="text-align:center">
+                <button type="button" id="btn-close-modal" data-dismiss="modal">x</button>
+                <h4 class="modal-title" style="margin-bottom:5%">A proposta foi validada.</h4>
+
+                <button type="button" id="btn-fechar" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // $(" #btn-recusar1").click((item) => {
+    //     console.log("clicou");
+    //     // item.preventDefault();
+    //     $("#modalRecusado").modal({ backdrop: true });
+    // })
+
+
+     $("#btn-validate").click((item) => {
+        console.log("clicou");
+        // item.preventDefault();
+        $("#modalValidado").modal({ backdrop: true });
+    })
+
+    $(document).ready(()=>{
+        loadAllPropostas();
+
+        loadOrientadores();
+
+        // $("#list-todas-propostas").click((e)=>{
+        //     e.preventDefault;
+        //     loadAllPropostas();
+        // })
+
+        $("#list-empresa-propostas").click((e)=>{
+            e.preventDefault;
+            loadPropostasOfEmpresa();
+        })
+
+        $("#list-estudante-propostas").click((e)=>{
+            e.preventDefault;
+            loadPropostasOfAlunos();
+        })
+
+
+    })
+
+</script>
